@@ -3,11 +3,12 @@ package com.example.user.listviewapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.Toolbar;
+import android.widget.TextView;
+
 
 public class DetailActivity extends AppCompatActivity {
 
-    Toolbar mToolbar;
+    TextView mTextViewbar;
     ImageView mImageView;
 
 
@@ -17,12 +18,12 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar2);
+        mTextViewbar = (TextView) findViewById(R.id.textViewBar2);
         mImageView = (ImageView) findViewById(R.id.imageView2);
 
         Bundle mBundle = getIntent().getExtras();
         if(mBundle != null){
-           mToolbar.setTitle(mBundle.getString("countryName"));
+           mTextViewbar.setText(mBundle.getString("countryName"));
            mImageView.setImageResource(mBundle.getInt("countryFlag"));
         }
     }

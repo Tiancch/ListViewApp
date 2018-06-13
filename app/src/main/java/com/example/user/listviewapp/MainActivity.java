@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toolbar;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Toolbar mToolbar;
+    TextView mTextViewbar;
     ListView mListView;
     String[] countryNames = {"Australia","Brazil","Canada","India","Mexico","Portugal","USA"};
     int[] countryFlags = {R.drawable.australia_flag, R.drawable.brazil_flag,R.drawable.canada_flag,R.drawable.india_flag,R.drawable.mexico_flag,R.drawable.portugal_flag,R.drawable.usa_flag};
@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle(getResources().getString(R.string.app_name));
+        mTextViewbar = (TextView) findViewById(R.id.textViewBar);
+        mTextViewbar.setText(getResources().getString(R.string.app_name));
         mListView = (ListView) findViewById(R.id.listview);
         MyAdapter myAdapter = new MyAdapter(MainActivity.this, countryNames, countryFlags);
         mListView.setAdapter(myAdapter);
